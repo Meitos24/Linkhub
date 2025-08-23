@@ -2,11 +2,22 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from .models import Usuario
 from .serializers import UsuarioSerialiazer
+from django.db import models
 
 # Create your views here.
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerialiazer
+    
+    """
+    MÉTODO POST
+    {
+        name,
+        username,
+        password,
+        rol,
+    }
+    """
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
