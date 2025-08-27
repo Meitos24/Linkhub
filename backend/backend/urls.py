@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('webapp.urls')) # enlazar la app
+    path('', include('webapp.urls')), # enlazar la app
 ]

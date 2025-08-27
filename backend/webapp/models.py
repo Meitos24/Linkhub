@@ -11,8 +11,8 @@ class RoleChoices(models.TextChoices):
     TECH = "tech", "Técnico"  # Usuario que opera/ejecuta
     VIEWER = "viewer", "Visualizador"  # Solo lectura
 class Usuario(models.Model):
-    name = models.CharField(max_length=30)
-    username = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
+    username = models.CharField(max_length=30, unique=True)
     password = models.CharField(max_length=30)
     rol = models.CharField(
         max_length=30,
